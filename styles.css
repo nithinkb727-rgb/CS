@@ -1,0 +1,129 @@
+:root {
+  --bg: #0f172a;
+  --surface: #1e293b;
+  --surface-2: #334155;
+  --text: #e2e8f0;
+  --muted: #94a3b8;
+  --accent: #38bdf8;
+  --correct: #22c55e;
+  --wrong: #ef4444;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+  background: radial-gradient(circle at top, #1d4ed8 0%, var(--bg) 35%);
+  color: var(--text);
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 1rem;
+}
+
+.app {
+  width: min(760px, 100%);
+}
+
+header {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.subtitle {
+  color: var(--muted);
+  margin-top: 0.4rem;
+}
+
+.card {
+  background: color-mix(in srgb, var(--surface), black 8%);
+  border: 1px solid #475569;
+  border-radius: 14px;
+  padding: 1.25rem;
+  box-shadow: 0 20px 40px rgba(2, 6, 23, 0.35);
+}
+
+.quiz-meta {
+  display: flex;
+  justify-content: space-between;
+  color: var(--muted);
+  font-size: 0.95rem;
+  margin-bottom: 0.75rem;
+}
+
+h2 {
+  margin-top: 0;
+  line-height: 1.4;
+}
+
+.answers {
+  display: grid;
+  gap: 0.65rem;
+  margin: 1rem 0 1.25rem;
+}
+
+.answer-btn {
+  text-align: left;
+  padding: 0.8rem 1rem;
+  border-radius: 10px;
+  border: 1px solid #64748b;
+  background: var(--surface);
+  color: var(--text);
+  cursor: pointer;
+  transition: transform 120ms ease, border-color 120ms ease;
+}
+
+.answer-btn:hover:not(:disabled) {
+  transform: translateY(-1px);
+  border-color: var(--accent);
+}
+
+.answer-btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.85;
+}
+
+.answer-btn.correct {
+  border-color: var(--correct);
+  background: color-mix(in srgb, var(--correct), var(--surface) 80%);
+}
+
+.answer-btn.wrong {
+  border-color: var(--wrong);
+  background: color-mix(in srgb, var(--wrong), var(--surface) 85%);
+}
+
+.actions {
+  display: flex;
+  gap: 0.6rem;
+}
+
+.btn {
+  border: 1px solid transparent;
+  border-radius: 10px;
+  background: var(--accent);
+  color: #082f49;
+  padding: 0.65rem 1rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.45;
+}
+
+.btn.ghost {
+  background: transparent;
+  color: var(--text);
+  border-color: #64748b;
+}
+
+footer {
+  margin-top: 1rem;
+  text-align: center;
+  color: var(--muted);
+}
